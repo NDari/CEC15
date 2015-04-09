@@ -11,7 +11,6 @@
 
 #include <stdio.h>
 #include <math.h>
-#include <malloc.h>
 #include <stdlib.h>
 
 #define INF 1.0e99
@@ -124,7 +123,7 @@ void cec15_test_func(double *x, double *f, int nx, int mx,int func_num)
         
         for (i=0; i<cf_num*nx*nx; i++)
         {
-            fscanf(fpt,"%Lf",&M[i]);
+            fscanf(fpt,"%lf",&M[i]);
         }
         fclose(fpt);
 
@@ -149,7 +148,7 @@ void cec15_test_func(double *x, double *f, int nx, int mx,int func_num)
             }
             for (i=0; i<cf_num; i++)
             {
-                fscanf(fpt,"%Lf",&bias[i]);
+                fscanf(fpt,"%lf",&bias[i]);
             }
 
             fclose(fpt);
@@ -172,7 +171,7 @@ void cec15_test_func(double *x, double *f, int nx, int mx,int func_num)
 
         for(i=0;i<nx*cf_nums[func_num];i++)
         {
-            fscanf(fpt,"%Lf",&OShift[i]);
+            fscanf(fpt,"%lf",&OShift[i]);
             // if finish reading a row, skip the rest of the line to the next line  
             // bug fixed 2014/12/26 by Q. Chen
             if (cf_nums[func_num] > 1 && ((i+1) % nx) == 0) {
